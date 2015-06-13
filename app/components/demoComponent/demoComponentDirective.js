@@ -1,4 +1,4 @@
-angular.module('healthyGulpAngularApp')
+angular.module('f9.finance-app')
 
 .directive('demoComponent', [function() {
         return {
