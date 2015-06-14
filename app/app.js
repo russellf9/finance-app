@@ -1,7 +1,7 @@
-angular.module('f9.finance-app', ['ui.router', 'angularGrid', 'f9.grid.simple-example'])
+angular.module('f9.finance-app', ['ui.router', 'angularGrid', 'f9.grid.navigation', 'f9.grid.simple-example'])
 
-.config(['$stateProvider', '$urlRouterProvider',
-    function($stateProvider, $urlRouterProvider) {
+.config(['$stateProvider', '$urlRouterProvider', '$locationProvider',
+    function($stateProvider, $urlRouterProvider, $locationProvider) {
 
         $urlRouterProvider.otherwise('/');
 
@@ -17,4 +17,5 @@ angular.module('f9.finance-app', ['ui.router', 'angularGrid', 'f9.grid.simple-ex
               controller: 'SimpleExampleController as simple'
           });
 
+        $locationProvider.html5Mode(true);
     }]);
