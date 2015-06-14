@@ -1,4 +1,4 @@
-angular.module('f9.finance-app', ['ui.router', 'angularGrid', 'f9.grid'])
+angular.module('f9.finance-app', ['ui.router', 'angularGrid', 'f9.grid.simple-example'])
 
 .config(['$stateProvider', '$urlRouterProvider',
     function($stateProvider, $urlRouterProvider) {
@@ -11,10 +11,10 @@ angular.module('f9.finance-app', ['ui.router', 'angularGrid', 'f9.grid'])
                 templateUrl: 'components/home.html'
             })
 
-          .state('finance', {
-              url: '/finance',
-              templateUrl: 'components/finance.html',
-              controller: 'GridController as grid'
+          .state('simple-example', {
+              url: '/simple-example',
+              templateUrl: 'components/simple.html',
+              controller: 'SimpleExampleController as simple'
           });
 
     }]);

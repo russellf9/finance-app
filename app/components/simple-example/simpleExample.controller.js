@@ -3,15 +3,15 @@
  */
 
 // declare module in the Controller
-angular.module('f9.grid', [])
+angular.module('f9.grid.simple-example', [])
 
-	.controller('GridController', _grid);
+	.controller('SimpleExampleController', _simpleExample);
 
-function _grid() {
+function _simpleExample() {
 
 	var vm = this;
 
-	console.log('hi from the GridController! :-)');
+	console.log('hi from the SimpleExample! :-)');
 
 	vm.name = 'russell';
 
