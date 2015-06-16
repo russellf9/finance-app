@@ -7,11 +7,11 @@ angular.module('f9.grid.simple-example', [])
 
 	.controller('SimpleExampleController', _simpleExample);
 
-function _simpleExample() {
+function _simpleExample($state) {
 
 	var vm = this;
 
-	console.log('hi from the SimpleExample! :-)');
+	console.log('hi from the SimpleExample! :-)', $state);
 
 	vm.name = 'russell';
 

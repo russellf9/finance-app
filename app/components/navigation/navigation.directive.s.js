@@ -5,25 +5,33 @@ angular.module('f9.grid.navigation', [])
 
 	.directive('navigation', _navigation);
 
-function _navigation() {
+function _navigation($state) {
 	return {
 		restrict: 'A',
 		scope: {
 			options: '='
 		},
 		templateUrl: 'components/navigation/navbar.html',
-		link: function(scope, $location) {
+		link: function(scope) {
+
+			scope.uiRouterState = $state;
+
+			console.log('nav directive :-)', $state);
+
+			scope.current = $state.current;
+
+			console.log('nav directive current: ', scope.current);
 
 			scope.menu = [{
 				'title': 'Home',
-				'link': '/'
+				'state': 'home'
 			},{
 				'title': 'Simple',
-				'link': '/simple-example'
+				'state': 'simple-example'
 			}];
 
-			scope.isActive = function(route) {
-				//return route === $location.path();
+			scope.isActive = function(state) {
+				return state === scope.current.name;
 			};
 
 

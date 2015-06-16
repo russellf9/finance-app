@@ -1,2 +1,14 @@
 @import "settings";
 @import "../../bower_components/foundation/scss/foundation";
+
+
+$red : #BB2211;
+
+.active, {
+  color: $red;
+}
+
+/* selected link */
+a:active {
+  color: $red;
+}
