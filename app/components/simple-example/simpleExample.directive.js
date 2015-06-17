@@ -3,9 +3,9 @@
  */
 angular.module('f9.grid.simple-example')
 
-	.directive('simpleExample', _simpleExample);
+	.directive('simpleExample', SimpleExample);
 
-function _simpleExample() {
+function SimpleExample() {
 	return {
 		restrict: 'A',
 		scope: {
