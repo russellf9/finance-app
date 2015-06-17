@@ -1,6 +1,11 @@
 @import "settings";
 @import "../../bower_components/foundation/scss/foundation";
+@import "../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap";
 
+
+body {
+  padding: 20px;
+}
 
 $red : #BB2211;
 
@@ -8,7 +13,24 @@ $red : #BB2211;
   color: $red;
 }
 
+.header {
+  height: 40px;
+}
+
+/* Make the masthead heading the same height as the navigation */
+.header h3 {
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: 40px;
+  padding-bottom: 19px;
+}
+
 /* selected link */
 a:active {
   color: $red;
+}
+
+ul li {
+  list-style: none;
+  display: inline;
 }

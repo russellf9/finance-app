@@ -3,38 +3,32 @@
  */
 angular.module('f9.grid.navigation', [])
 
-	.directive('navigation', _navigation);
+	.directive('navigation', Navigation);
 
-function _navigation($state) {
+function Navigation($state) {
 	return {
 		restrict: 'A',
 		scope: {
 			options: '='
 		},
 		templateUrl: 'components/navigation/navbar.html',
-		link: function(scope) {
-
-			scope.uiRouterState = $state;
-
-			console.log('nav directive :-)', $state);
-
-			scope.current = $state.current;
-
-			console.log('nav directive current: ', scope.current);
-
-			scope.menu = [{
-				'title': 'Home',
-				'state': 'home'
-			},{
-				'title': 'Simple',
-				'state': 'simple-example'
-			}];
-
-			scope.isActive = function(state) {
-				return state === scope.current.name;
-			};
-
-
-		}
+		link: link
 	};
+
+	function link(scope) {
+
+		// define list of menu `states` here
+		scope.menu = [{
+			'title': 'Home',
+			'state': 'home'
+		}, {
+			'title': 'Simple',
+			'state': 'simple-example'
+		}];
+
+		// conditional logic to define the active menu item
+		scope.isActive = function(state) {
+			return state === scope.current.name;
+		};
+	}
 }
