@@ -1,29 +1,8 @@
-angular.module('f9.finance-app', ['ui.router', 'angularGrid', 'f9.grid.navigation', 'f9.grid.simple-example'])
-
-  //.run( ['$rootScope', '$state', '$stateParams',
-  //    function ($rootScope,   $state,   $stateParams) {
-  //        $rootScope.$state = $state;
-  //        $rootScope.$stateParams = $stateParams;
-  //    }
-  //])
-
-  //.run(function ($state,$rootScope) {
-  //  $rootScope.$state = $state;
-  //})
-
-.run(function($rootScope, $state, $stateParams) {
-  $rootScope.$state = $state;
-  $rootScope.$stateParams = $stateParams;
-  $rootScope.findState = function() {
-    var currentName = $state.current.name;
-    var currentMatch = currentName.match(/./g);
-    $rootScope.currentCount = currentMatch.length;
-  };
-})
+angular.module('f9.finance-app', ['ui.router', 'angularGrid', 'f9.grid.state', 'f9.grid.navigation', 'f9.grid.simple-example'])
 
 
 .config(['$stateProvider', '$urlRouterProvider', '$locationProvider',
-    function($stateProvider, $urlRouterProvider, $locationProvider) {
+    function($stateProvider, $urlRouterProvider) {
 
         $urlRouterProvider.otherwise('/');
 
@@ -39,5 +18,4 @@ angular.module('f9.finance-app', ['ui.router', 'angularGrid', 'f9.grid.navigatio
               controller: 'SimpleExampleController as simple'
           });
 
-        //$locationProvider.html5Mode(true);
     }]);

@@ -13,6 +13,8 @@ function _simpleExample($state) {
 
 	console.log('hi from the SimpleExample! :-)', $state);
 
+	vm.currentState = $state.current.name;
+
 	vm.name = 'russell';
 
 	

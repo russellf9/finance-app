@@ -5,7 +5,7 @@ angular.module('f9.grid.navigation', [])
 
 	.directive('navigation', Navigation);
 
-function Navigation($state) {
+function Navigation(f9StateService) {
 	return {
 		restrict: 'A',
 		scope: {
@@ -16,7 +16,6 @@ function Navigation($state) {
 	};
 
 	function link(scope) {
-
 		// define list of menu `states` here
 		scope.menu = [{
 			'title': 'Home',
@@ -27,8 +26,9 @@ function Navigation($state) {
 		}];
 
 		// conditional logic to define the active menu item
-		scope.isActive = function(state) {
-			return state === scope.current.name;
+		scope.isActive = function(itemState) {
+			var currentState = f9StateService.getStateCurrentName();
+			return currentState === itemState;
 		};
 	}
 }
