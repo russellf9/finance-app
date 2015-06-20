@@ -5,19 +5,12 @@
 // declare module in the Controller
 angular.module('f9.grid.simple-example', [])
 
-	.controller('SimpleExampleController', _simpleExample);
+	.controller('SimpleExampleController', SimpleExample);
 
-function _simpleExample($state) {
+function SimpleExample() {
 
 	var vm = this;
 
-	console.log('hi from the SimpleExample! :-)', $state);
-
-	vm.currentState = $state.current.name;
-
-	vm.name = 'russell';
-
-	
 	vm.columnDefs = [
 		{displayName: 'Make', field: 'make'},
 		{displayName: 'Model', field: 'model'},

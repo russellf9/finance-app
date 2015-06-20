@@ -18,7 +18,6 @@ function f9StateService($state) {
 
 		getStateCurrentName: getStateCurrentName
 
-
 	};
 
 	/**
