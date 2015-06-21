@@ -9,15 +9,32 @@ function Navigation(f9StateService) {
 	return {
 		restrict: 'A',
 		scope: {
-			options: '='
+			options: '=',
+			max: '='
 		},
-		templateUrl: 'components/navigation/navbar.html',
-		link: link
+		templateUrl: 'components/navigation/navbar.directive.html',
+		link: link,
+		controller: NavigationController,
+		controllerAs: 'vm',
+		bindToController: true // because the scope is isolated
 	};
 
 	function link(scope) {
+
+		// conditional logic to define the active menu item
+		scope.isActive = function(itemState) {
+			var currentState = f9StateService.getStateCurrentName();
+			return currentState === itemState;
+		};
+	}
+
+
+	function NavigationController() {
+
+		var vm = this;
+
 		// define list of menu `states` here
-		scope.menu = [{
+		vm.menu = [{
 			'title': 'Home',
 			'state': 'home'
 		}, {
@@ -25,10 +42,5 @@ function Navigation(f9StateService) {
 			'state': 'simple-example'
 		}];
 
-		// conditional logic to define the active menu item
-		scope.isActive = function(itemState) {
-			var currentState = f9StateService.getStateCurrentName();
-			return currentState === itemState;
-		};
 	}
 }
