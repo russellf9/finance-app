@@ -1,6 +1,11 @@
 angular.module('f9.finance-app', ['ui.router',
-  'angularGrid', 'f9.grid.state', 'f9.grid.navigation',
-  'f9.grid.simple-example', 'f9.grid.multiplication'])
+                                  'angularGrid',
+                                  'f9.grid.state',
+                                  'f9.grid.navigation',
+                                  'f9.grid.simple-example',
+                                  'f9.grid.multiplication',
+                                  'f9.grid.people'
+                                  ])
 
 
 .config(['$stateProvider', '$urlRouterProvider', '$locationProvider',
@@ -23,7 +28,11 @@ angular.module('f9.finance-app', ['ui.router',
           .state('multiplication', {
               url: '/multiplication',
               templateUrl: 'components/multiplication.html'
+          })
 
+          .state('people', {
+            url: '/people',
+            templateUrl: 'components/people.html'
           })
         ;
 

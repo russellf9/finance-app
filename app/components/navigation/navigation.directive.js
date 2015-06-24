@@ -43,6 +43,9 @@ function Navigation(f9StateService) {
 		}, {
 			'title': 'Multiplication',
 			'state': 'multiplication'
+		}, {
+			'title': 'People',
+			'state': 'people'
 		}];
 
 	}
