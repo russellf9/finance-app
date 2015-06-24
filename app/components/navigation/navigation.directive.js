@@ -40,6 +40,9 @@ function Navigation(f9StateService) {
 		}, {
 			'title': 'Simple',
 			'state': 'simple-example'
+		}, {
+			'title': 'Multiplication',
+			'state': 'multiplication'
 		}];
 
 	}
