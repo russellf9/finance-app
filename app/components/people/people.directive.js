@@ -23,29 +23,25 @@ function People(PeopleService) {
 	function controller() {
 		var vm = this;
 
-		console.log('x People::controller!');
+		vm.getRandomPerson = _getRandomPerson;
 
-		PeopleService.getRandomPerson().then(function(result) {
+		// always call on load
+		vm.getRandomPerson();
 
-			console.log('result: ', result)
+		// Makes the call to create a random person
+		function _getRandomPerson() {
+			PeopleService.getRandomPerson().then(function(result) {
 
-			vm.person = result.data.results[0].user;
+				vm.person = result.data.results[0].user;
 
+				// adjust the data
+				vm.person.firstName = vm.person.name.first;
+				vm.person.secondName = vm.person.name.last;
 
-
-			// adjust the data
-
-			vm.person.firstName = vm.person.name.first;
-			vm.person.secondName = vm.person.name.last;
-
-			console.log('Person: ', vm.person);
-
-
-		}, function(error) {
-
-		})
-
-
+			}, function(error) {
+				// TODO
+			})
+		}
 	}
 }
 

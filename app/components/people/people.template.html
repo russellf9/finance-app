@@ -1,5 +1,12 @@
 <p><strong>Person</strong></p>
-<p>First Name: {{ctrl.person.firstName}}</p>
-<p>Second Name: {{ctrl.person.secondName}}</p>
-<p>Username: {{ctrl.person.username}}</p>
-<p>Email: {{ctrl.person.email}}</p>
+
+<input-item name="First Name" model="ctrl.person.firstName"></input-item>
+
+<input-item name="Second Name" model="ctrl.person.secondName"></input-item>
+
+<input-item name="Password" model="ctrl.person.password"></input-item>
+
+<input-item name="Username" model="ctrl.person.username"></input-item>
+
+<button type="button" class="btn btn-succcess" ng-click="ctrl.getRandomPerson()" aria-haspopup="true" aria-expanded="false">
+Regenerate</button>
