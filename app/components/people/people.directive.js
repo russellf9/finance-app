@@ -16,7 +16,7 @@ function People(PeopleService) {
 		bindToController: true,
 		scope: {
 		},
-		controllerAs: 'ctrl',
+		controllerAs: 'people',
 		controller: controller
 	};
 
