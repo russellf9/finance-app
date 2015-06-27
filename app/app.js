@@ -5,7 +5,8 @@ angular.module('f9.finance-app', ['ui.router',
                                   'f9.grid.simple-example',
                                   'f9.grid.multiplication',
                                   'f9.grid.people',
-                                  'f9.shared.input'
+                                  'f9.shared.input',
+                                  'f9.shared.filters'
                                   ])
 
 

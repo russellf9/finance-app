@@ -6,7 +6,7 @@
 angular.module('f9.grid.people', [])
 	.directive('people', People);
 
-function People(PeopleService) {
+function People($filter, PeopleService) {
 
 	return {
 		restrict: 'EA',
@@ -35,8 +35,12 @@ function People(PeopleService) {
 				vm.person = result.data.results[0].user;
 
 				// adjust the data
-				vm.person.firstName = vm.person.name.first;
-				vm.person.secondName = vm.person.name.last;
+				vm.person.firstName = $filter('capitalizeAllWords')(vm.person.name.first);
+				vm.person.secondName = $filter('capitalizeAllWords')(vm.person.name.last);
+
+				vm.person.fullName = vm.person.firstName + ' ' + vm.person.secondName;
+
+
 
 			}, function(error) {
 				// TODO
