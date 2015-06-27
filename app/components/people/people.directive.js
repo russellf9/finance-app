@@ -40,6 +40,8 @@ function People($filter, PeopleService) {
 
 				vm.person.fullName = vm.person.firstName + ' ' + vm.person.secondName;
 
+				console.log('image url: ', vm.person.picture.medium)
+
 
 
 			}, function(error) {

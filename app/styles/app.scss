@@ -13,6 +13,7 @@ body {
 
 }
 
+$grey: #ccc;
 $red : #BB2211;
 
 .active, {
@@ -55,14 +56,30 @@ ul li {
 }
 
 
+$display-width: 400px;
+
+$image-size: 150px;
+
 // input styling
 
 .input-group {
   margin-top: 1em;
   margin-bottom: 1em;
-  width: 400px;
+  width: $display-width;
 }
 
 .input-group-addon {
   width: 150px;
+}
+
+// the image container for the circle image
+
+.image-container {
+  width: $display-width;
+  min-height: $image-size;
+  border: solid 1px $grey;
+}
+
+.img-circle {
+  text-align: center;
 }
