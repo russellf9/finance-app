@@ -77,9 +77,20 @@ $image-size: 150px;
 .image-container {
   width: $display-width;
   min-height: $image-size;
-  border: solid 1px $grey;
+//  border: solid 1px $grey;
 }
 
 .img-circle {
   text-align: center;
+}
+
+$people-container-space: 10px;
+
+.people-container {
+  border: solid 1px $grey;
+  display: block;
+  width: $display-width + $people-container-space * 2;
+  padding: $people-container-space;
+  min-height: 612px;
+
 }

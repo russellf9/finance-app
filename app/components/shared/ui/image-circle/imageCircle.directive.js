@@ -6,7 +6,7 @@
 angular.module('f9.shared.ui.image-circle', [])
 	.directive('imageCircle', ImageCircle);
 
-function ImageCircle() {
+function ImageCircle($timeout) {
 
 	return {
 		restrict: 'EA',
@@ -21,6 +21,24 @@ function ImageCircle() {
 
 	function controller() {
 		var vm = this;
+
+		vm.onLoad = _onLoad;
+
+		vm.loaded = false;
+
+		vm.name = 'russell'
+
+		function _onLoad(event)  {
+			console.log('Ok Image has loaded! vm: ', vm);
+
+
+			$timeout(_set, 10);
+		}
+
+		function _set() {
+			vm.loaded = true;
+			vm.name = 'grace'
+		}
 
 	}
 }

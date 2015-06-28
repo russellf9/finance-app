@@ -1,23 +1,28 @@
-<p><strong>Person</strong></p>
+<div>
 
-<image-circle url="people.person.picture.medium"></image-circle>
+    <p class="text-center"><strong>Random Person Generator</strong></p>
 
-<input-item name="First Name" model="people.person.firstName"></input-item>
+    <image-circle url="people.person.picture.medium"></image-circle>
 
-<input-item name="Second Name" model="people.person.secondName"></input-item>
+    <input-item name="First Name" model="people.person.firstName"></input-item>
 
-<input-item name="Full Name" model="people.person.fullName"></input-item>
+    <input-item name="Second Name" model="people.person.secondName"></input-item>
 
-<input-item name="Password" model="people.person.password"></input-item>
+    <input-item name="Full Name" model="people.person.fullName"></input-item>
 
-<input-item name="Username" model="people.person.username"></input-item>
+    <input-item name="Password" model="people.person.password"></input-item>
 
-<input-item name="Email" model="people.person.email"></input-item>
+    <input-item name="Username" model="people.person.username"></input-item>
 
-<input-item name="Mobile Number" model="people.person.mobileNumber"></input-item>
+    <input-item name="Email" model="people.person.email"></input-item>
+
+    <input-item name="Mobile Number" model="people.person.mobileNumber"></input-item>
+
+   <div class="text-center" ng-if="people.loaded">
+    <button type="button" class="btn btn-success" ng-click="people.getRandomPerson()" aria-haspopup="true" aria-expanded="false">
+    Regenerate</button>
+   </div>
+
+</div>
 
 
-
-
-<button type="button" class="btn btn-succcess" ng-click="people.getRandomPerson()" aria-haspopup="true" aria-expanded="false">
-Regenerate</button>

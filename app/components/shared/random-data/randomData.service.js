@@ -1,5 +1,7 @@
 /**
  * Created by russell@factornine.co.uk on 28/06/2015.
+ *
+ * @description A Service for to provide various random data
  */
 
 
@@ -26,7 +28,7 @@ function Service() {
 	 * @returns {number}
 	 */
 	function getMobileNumber() {
-		return Number('4407' + _randomSeries(9));
+		return Number(_prefix + _randomSeries(9));
 	}
 
 	/**
@@ -41,9 +43,9 @@ function Service() {
 		}
 		return string;
 	}
+
 	// returns a random number between 0 and 9
 	function _randomDigit() {
 		return Math.floor((Math.random() * 10));
 	}
-
 }
