@@ -7,7 +7,8 @@ angular.module('f9.finance-app', ['ui.router',
                                   'f9.grid.people',
                                   'f9.shared.input',
                                   'f9.shared.filters',
-                                  'f9.shared.ui.image-circle'
+                                  'f9.shared.ui.image-circle',
+                                  'f9.shared.random-data'
                                   ])
 
 

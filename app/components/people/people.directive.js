@@ -6,7 +6,7 @@
 angular.module('f9.grid.people', [])
 	.directive('people', People);
 
-function People($filter, PeopleService) {
+function People($filter, PeopleService, RandomDataService) {
 
 	return {
 		restrict: 'EA',
@@ -40,9 +40,7 @@ function People($filter, PeopleService) {
 
 				vm.person.fullName = vm.person.firstName + ' ' + vm.person.secondName;
 
-				console.log('image url: ', vm.person.picture.medium)
-
-
+				vm.person.mobileNumber = RandomDataService.getMobileNumber();
 
 			}, function(error) {
 				// TODO
