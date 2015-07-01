@@ -13,6 +13,7 @@ function People($filter, PeopleService, RandomDataService) {
 		transclude: true,
 		templateUrl: 'components/people/people.template.html',
 		// this is new to AngularJS 1.3
+		// for the `scope` properties...
 		bindToController: true,
 		scope: {
 		},

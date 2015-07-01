@@ -26,20 +26,16 @@ function ImageCircle($timeout) {
 
 		vm.loaded = false;
 
-		vm.name = 'russell'
-
+		// handles the successful loading of the image
+		// the $timeout is required to force a digest
 		function _onLoad(event)  {
-			console.log('Ok Image has loaded! vm: ', vm);
-
-
-			$timeout(_set, 10);
+			$timeout(_set, 1);
 		}
 
+		// simply sets the `loaded` property
 		function _set() {
 			vm.loaded = true;
-			vm.name = 'grace'
 		}
-
 	}
 }
 
