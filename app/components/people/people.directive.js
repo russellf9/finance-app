@@ -24,10 +24,19 @@ function People($filter, PeopleService, RandomDataService) {
 	function controller() {
 		var vm = this;
 
+		vm.loaded = false;
+
 		vm.getRandomPerson = _getRandomPerson;
+
+		vm.onLoad = _onLoad;
 
 		// always call on load
 		vm.getRandomPerson();
+
+
+		function _onLoad() {
+			vm.loaded = true;
+		}
 
 		// Makes the call to create a random person
 		function _getRandomPerson() {

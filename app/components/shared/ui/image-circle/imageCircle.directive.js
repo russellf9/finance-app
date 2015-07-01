@@ -13,7 +13,8 @@ function ImageCircle($timeout) {
 		templateUrl: 'components/shared/ui/image-circle/image-circle.template.html',
 		bindToController: true,
 		scope: {
-			url: '='
+			url: '=',
+			onLoadComplete: '&?'
 		},
 		controllerAs: 'image',
 		controller: controller
@@ -26,10 +27,15 @@ function ImageCircle($timeout) {
 
 		vm.loaded = false;
 
+
 		// handles the successful loading of the image
 		// the $timeout is required to force a digest
 		function _onLoad(event)  {
 			$timeout(_set, 1);
+
+			console.log('vm: ', vm)
+
+			vm.onLoadComplete()();
 		}
 
 		// simply sets the `loaded` property

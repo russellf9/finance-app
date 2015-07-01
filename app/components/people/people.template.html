@@ -2,7 +2,7 @@
 
     <p class="text-center"><strong>Random Person Generator</strong></p>
 
-    <image-circle url="people.person.picture.medium"></image-circle>
+    <image-circle url="people.person.picture.medium" on-load-complete="people.onLoad"></image-circle>
 
     <input-item name="First Name" model="people.person.firstName"></input-item>
 
@@ -18,7 +18,7 @@
 
     <input-item name="Mobile Number" model="people.person.mobileNumber"></input-item>
 
-   <div class="text-center" ng-if="true">
+   <div class="text-center" ng-if="people.loaded">
     <button type="button" class="btn btn-success" ng-click="people.getRandomPerson()" aria-haspopup="true" aria-expanded="false">
     Regenerate</button>
    </div>
