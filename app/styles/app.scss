@@ -77,7 +77,7 @@ $image-size: 150px;
 .image-container {
   width: $display-width;
   min-height: $image-size;
-//  border: solid 1px $grey;
+//  border: solid 1px $red;
 }
 
 .img-circle {
@@ -93,4 +93,16 @@ $people-container-space: 10px;
   padding: $people-container-space;
   min-height: 612px;
 
+}
+
+// aligns both horizontally and vertically
+.flex-container {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center
+}
+
+.f9-icon {
+  color: $grey;
 }

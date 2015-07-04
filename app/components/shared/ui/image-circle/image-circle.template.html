@@ -1,6 +1,6 @@
-<div class="image-container" ng-cloak>
-  <div class="row text-center">
+<div class="image-container flex-container" ng-cloak>
+    <f9-loader done="image.loaded"></f9-loader>
+
     <img ng-show="image.loaded" style="text-align: center;" ng-src="{{image.url}}" alt="image" class="img-circle"
          f9-image-load on-load="image.onLoad">
-  </div>
 </div>

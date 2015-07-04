@@ -20,27 +20,37 @@ function ImageCircle($timeout) {
 		controller: controller
 	};
 
-	function controller() {
+	function controller($scope) {
 		var vm = this;
 
+		// The function evoked by the `f9-image-load` Directive
 		vm.onLoad = _onLoad;
 
 		vm.loaded = false;
 
+		// handle any updates to the value of the url
+		$scope.$watch(angular.bind(this, _watchUrl), _watchHandler);
+
+		//
+		function _watchUrl() {
+			return vm.url;
+		}
+
+		//
+		function _watchHandler(newValue) {
+			vm.loaded = vm.url ? true : false;
+		}
+
 
 		// handles the successful loading of the image
 		// the $timeout is required to force a digest
-		function _onLoad(event)  {
-			$timeout(_set, 1);
+		function _onLoad(event) {
+			$timeout(angular.noop, 1);
 
-			console.log('vm: ', vm)
+			console.log('ImageCircle::onLoad ', vm);
 
+			// evoke the passed function
 			vm.onLoadComplete()();
-		}
-
-		// simply sets the `loaded` property
-		function _set() {
-			vm.loaded = true;
 		}
 	}
 }

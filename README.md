@@ -12,4 +12,4 @@ I've used the [healthy-gulp-angular](https://github.com/paislee/healthy-gulp-ang
 
 `$ gulp watch-dev`
 
-Open http://localhost:8080/ in Chrome
+Open http://localhost:8081/ in Chrome

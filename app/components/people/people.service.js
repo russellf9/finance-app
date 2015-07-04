@@ -5,7 +5,7 @@
 angular.module('f9.grid.people')
 	.service('PeopleService', Service);
 
-function Service($http) {
+function Service($http, $timeout) {
 
 	// 'private'
 	var _name = 'Russell';

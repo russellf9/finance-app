@@ -18,10 +18,16 @@ function People($filter, PeopleService, RandomDataService) {
 		scope: {
 		},
 		controllerAs: 'people',
-		controller: controller
+		controller: PeopleController
 	};
 
-	function controller() {
+	/**
+	 * @name PeopleController
+	 * @description
+	 * @param $timeout
+	 * @constructor
+	 */
+	function PeopleController($timeout) {
 		var vm = this;
 
 		vm.loaded = false;
@@ -30,31 +36,53 @@ function People($filter, PeopleService, RandomDataService) {
 
 		vm.onLoad = _onLoad;
 
+		vm.clearData = _clearData;
+
 		// always call on load
 		vm.getRandomPerson();
 
 
+
+		// sets a flag to hold the `loaded` state
 		function _onLoad() {
 			vm.loaded = true;
 		}
 
 		// Makes the call to create a random person
 		function _getRandomPerson() {
+
+			// reset the loaded state so the loading animation knows to show itself
+			vm.loaded = false;
+
+			if(vm.person) {
+				vm.clearData();
+			}
+
 			PeopleService.getRandomPerson().then(function(result) {
 
-				vm.person = result.data.results[0].user;
-
-				// adjust the data
-				vm.person.firstName = $filter('capitalizeAllWords')(vm.person.name.first);
-				vm.person.secondName = $filter('capitalizeAllWords')(vm.person.name.last);
-
-				vm.person.fullName = vm.person.firstName + ' ' + vm.person.secondName;
-
-				vm.person.mobileNumber = RandomDataService.getMobileNumber();
+				$timeout(_setData, 1000, true, result);
 
 			}, function(error) {
 				// TODO
 			})
+		}
+
+		// Assigns the data to this `View Model` from the Data collection
+		function _setData(result) {
+
+			vm.person = result.data.results[0].user;
+
+			// adjust the data
+			vm.person.firstName = $filter('capitalizeAllWords')(vm.person.name.first);
+			vm.person.secondName = $filter('capitalizeAllWords')(vm.person.name.last);
+
+			vm.person.fullName = vm.person.firstName + ' ' + vm.person.secondName;
+
+			vm.person.mobileNumber = RandomDataService.getMobileNumber();
+		}
+
+		function _clearData() {
+			vm.person = {};
 		}
 	}
 }
