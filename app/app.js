@@ -5,6 +5,7 @@ angular.module('f9.finance-app', ['ui.router',
                                   'f9.grid.simple-example',
                                   'f9.grid.multiplication',
                                   'f9.grid.people',
+                                  'f9.grid.random-person',
                                   'f9.shared.input',
                                   'f9.shared.filters',
                                   'f9.shared.ui.image-circle',
@@ -34,6 +35,11 @@ angular.module('f9.finance-app', ['ui.router',
           .state('multiplication', {
               url: '/multiplication',
               templateUrl: 'components/multiplication.html'
+          })
+
+          .state('random-person', {
+            url: '/random-person',
+            templateUrl: 'components/random-person.html'
           })
 
           .state('people', {

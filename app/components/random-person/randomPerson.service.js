@@ -2,8 +2,8 @@
  * Created by factornine on 24/06/2015.
  */
 
-angular.module('f9.grid.people')
-	.service('PeopleService', Service);
+angular.module('f9.grid.random-person')
+	.service('RandomPersonService', Service);
 
 function Service($http, $timeout) {
 
@@ -11,15 +11,19 @@ function Service($http, $timeout) {
 	var _name = 'Russell';
 
 	var service = {
-		getRandomPeople: getRandomPeople
+		getName: getName,
+		getRandomPerson: getRandomPerson
 	};
 
 	return service;
 
 	///////////
 
+	function getName() {
+		return _name;
+	}
 
-	function getRandomPeople() {
+	function getRandomPerson() {
 		return $http.get('http://api.randomuser.me/');
 	}
 

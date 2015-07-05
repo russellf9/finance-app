@@ -44,9 +44,14 @@ function Navigation(f9StateService) {
 			'title': 'Multiplication',
 			'state': 'multiplication'
 		}, {
-			'title': 'People',
-			'state': 'people'
-		}];
+			'title': 'Random Person',
+			'state': 'random-person'
+		},
+			{
+				'title': 'People',
+				'state': 'people'
+			}
+		];
 
 	}
 }

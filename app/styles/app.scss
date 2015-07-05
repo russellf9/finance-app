@@ -58,6 +58,8 @@ ul li {
 
 $display-width: 400px;
 
+$people-display-width: 800px;
+
 $image-size: 150px;
 
 // input styling
@@ -84,15 +86,21 @@ $image-size: 150px;
   text-align: center;
 }
 
-$people-container-space: 10px;
+// for the single random person
 
-.people-container {
+$person-container-space: 10px;
+
+.container {
+  margin-top: 1em;
+}
+
+.person-container {
+  @extend .container;
   border: solid 1px $grey;
   display: block;
-  width: $display-width + $people-container-space * 2;
-  padding: $people-container-space;
+  width: $display-width + $person-container-space * 2;
+  padding: $person-container-space;
   min-height: 612px;
-
 }
 
 // aligns both horizontally and vertically
@@ -105,4 +113,15 @@ $people-container-space: 10px;
 
 .f9-icon {
   color: $grey;
+}
+
+$people-container-space: 10px;
+
+.people-container {
+  @extend .container;
+  border: solid 1px $grey;
+  display: block;
+  width: $people-display-width + $person-container-space * 2;
+  padding: $person-container-space;
+  min-height: 612px;
 }
