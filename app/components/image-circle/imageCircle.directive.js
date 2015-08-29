@@ -3,14 +3,14 @@
  */
 
 
-angular.module('f9.shared.ui.image-circle', [])
+angular.module('f9.grid.image-circle', [])
 	.directive('imageCircle', ImageCircle);
 
 function ImageCircle($timeout) {
 
 	return {
 		restrict: 'EA',
-		templateUrl: 'components/shared/ui/image-circle/image-circle.template.html',
+		templateUrl: 'components/image-circle/image-circle.template.html',
 		bindToController: true,
 		scope: {
 			url: '=',

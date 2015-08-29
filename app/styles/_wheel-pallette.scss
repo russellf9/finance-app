@@ -1,0 +1,54 @@
+ // == Define functions to creates all the colors
+
+$primary: #d58de7;
+
+/* Complementary color */
+$complementary: complement($primary);
+
+// == Rotate the hue wheel ========
+
+// adjust-hue($color, $degrees)        /* Rotates the hue wheel */
+
+/* Adjust the degree spacing */
+
+$distance: 90;
+
+$secondary: adjust-hue($primary, -$distance);
+
+$tertiary: adjust-hue($primary, $distance);
+
+// == Light and dark colors ========
+
+
+// lighten and darken the key colors
+
+$light-difference: 15%;
+
+
+$wheel-palette: (
+        'primary'       : (
+                base:   $primary,
+                light:  lighten($primary, $light-difference),
+                dark:   darken($primary, $light-difference)
+        ),
+        'complementary' : (
+                base:   $complementary,
+                light:  lighten($complementary, $light-difference),
+                dark:   darken($complementary, $light-difference)
+        ),
+        'secondary'   : (
+                base:   $secondary,
+                light:  lighten($secondary, $light-difference),
+                dark:   darken($secondary, $light-difference)
+        ),
+        'tertiary'    : (
+                base:   $tertiary,
+                light:  lighten($tertiary, $light-difference),
+                dark:   darken($tertiary, $light-difference)
+        ),
+        'grey-color'        : (
+                base:   grayscale($primary),
+                light:  lighten(grayscale($primary), $light-difference),
+                dark:   darken(grayscale($primary), $light-difference)
+        )
+);

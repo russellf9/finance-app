@@ -1,0 +1,244 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node', '/usr/local/bin/npm', 'install', '-g', 'n' ]
+2 info using npm@2.13.3
+3 info using node@v0.12.2
+4 verbose node symlink /usr/local/bin/node
+5 verbose install initial load of /usr/local/lib/package.json
+6 verbose readDependencies loading dependencies from /usr/local/lib/package.json
+7 silly cache add args [ 'n', null ]
+8 verbose cache add spec n
+9 silly cache add parsed spec { raw: 'n',
+9 silly cache add   scope: null,
+9 silly cache add   name: 'n',
+9 silly cache add   rawSpec: '',
+9 silly cache add   spec: '*',
+9 silly cache add   type: 'range' }
+10 silly addNamed n@*
+11 verbose addNamed "*" is a valid semver range for n
+12 silly addNameRange { name: 'n', range: '*', hasData: false }
+13 silly mapToRegistry name n
+14 silly mapToRegistry using default registry
+15 silly mapToRegistry registry https://registry.npmjs.org/
+16 silly mapToRegistry uri https://registry.npmjs.org/n
+17 verbose addNameRange registry:https://registry.npmjs.org/n not in flight; fetching
+18 verbose request uri https://registry.npmjs.org/n
+19 verbose request no auth needed
+20 info attempt registry request try #1 at 3:52:50 PM
+21 verbose request id a7a3b0b156081751
+22 http request GET https://registry.npmjs.org/n
+23 http 200 https://registry.npmjs.org/n
+24 silly get cb [ 200,
+24 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+24 silly get     etag: '"EHZJLSWI8SUXRXKF4GPZ3MNDY"',
+24 silly get     'content-type': 'application/json',
+24 silly get     'cache-control': 'max-age=60',
+24 silly get     'content-length': '52067',
+24 silly get     'accept-ranges': 'bytes',
+24 silly get     date: 'Sat, 29 Aug 2015 14:52:51 GMT',
+24 silly get     via: '1.1 varnish',
+24 silly get     age: '0',
+24 silly get     connection: 'keep-alive',
+24 silly get     'x-served-by': 'cache-lcy1120-LCY',
+24 silly get     'x-cache': 'MISS',
+24 silly get     'x-cache-hits': '0',
+24 silly get     'x-timer': 'S1440859970.642689,VS0,VE573',
+24 silly get     vary: 'Accept' } ]
+25 verbose get saving n to /Users/factornine/.npm/registry.npmjs.org/n/.cache.json
+26 verbose makeDirectory /Users/factornine/.npm creation not in flight; initializing
+27 silly makeDirectory /Users/factornine/.npm uid: 501 gid: 20
+28 silly addNameRange number 2 { name: 'n', range: '*', hasData: true }
+29 silly addNameRange versions [ 'n',
+29 silly addNameRange   [ '0.0.1',
+29 silly addNameRange     '0.0.2',
+29 silly addNameRange     '0.0.3',
+29 silly addNameRange     '0.0.4',
+29 silly addNameRange     '0.1.0',
+29 silly addNameRange     '0.1.1',
+29 silly addNameRange     '0.1.2',
+29 silly addNameRange     '0.2.0',
+29 silly addNameRange     '0.2.1',
+29 silly addNameRange     '0.2.2',
+29 silly addNameRange     '0.3.0',
+29 silly addNameRange     '0.4.0',
+29 silly addNameRange     '0.4.1',
+29 silly addNameRange     '0.4.2',
+29 silly addNameRange     '0.5.0',
+29 silly addNameRange     '0.5.1',
+29 silly addNameRange     '0.5.2',
+29 silly addNameRange     '0.5.3',
+29 silly addNameRange     '0.5.4',
+29 silly addNameRange     '0.6.0',
+29 silly addNameRange     '0.6.1',
+29 silly addNameRange     '0.7.0',
+29 silly addNameRange     '0.7.1',
+29 silly addNameRange     '0.7.2',
+29 silly addNameRange     '0.7.3',
+29 silly addNameRange     '0.8.0',
+29 silly addNameRange     '0.8.1',
+29 silly addNameRange     '0.8.2',
+29 silly addNameRange     '0.9.0',
+29 silly addNameRange     '0.9.1',
+29 silly addNameRange     '0.9.2',
+29 silly addNameRange     '0.9.3',
+29 silly addNameRange     '1.0.0',
+29 silly addNameRange     '1.1.0',
+29 silly addNameRange     '1.2.1',
+29 silly addNameRange     '1.2.2',
+29 silly addNameRange     '1.2.3',
+29 silly addNameRange     '1.2.4',
+29 silly addNameRange     '1.2.5',
+29 silly addNameRange     '1.2.6',
+29 silly addNameRange     '1.2.7',
+29 silly addNameRange     '1.2.8',
+29 silly addNameRange     '1.2.9',
+29 silly addNameRange     '1.2.11',
+29 silly addNameRange     '1.2.13',
+29 silly addNameRange     '1.2.14',
+29 silly addNameRange     '1.3.0',
+29 silly addNameRange     '1.4.0',
+29 silly addNameRange     '2.0.0',
+29 silly addNameRange     '1.4.1',
+29 silly addNameRange     '2.0.1',
+29 silly addNameRange     '1.4.2',
+29 silly addNameRange     '2.0.2' ] ]
+30 silly addNamed n@2.0.2
+31 verbose addNamed "2.0.2" is a plain semver version for n
+32 silly mapToRegistry name n
+33 silly mapToRegistry using default registry
+34 silly mapToRegistry registry https://registry.npmjs.org/
+35 silly mapToRegistry uri https://registry.npmjs.org/n
+36 verbose addRemoteTarball https://registry.npmjs.org/n/-/n-2.0.2.tgz not in flight; adding
+37 verbose addRemoteTarball [ 'https://registry.npmjs.org/n/-/n-2.0.2.tgz',
+37 verbose addRemoteTarball   '1d132d1e33c8687bae54313792626e7878bd5f57' ]
+38 info retry fetch attempt 1 at 3:52:51 PM
+39 info attempt registry request try #1 at 3:52:51 PM
+40 http fetch GET https://registry.npmjs.org/n/-/n-2.0.2.tgz
+41 http fetch 200 https://registry.npmjs.org/n/-/n-2.0.2.tgz
+42 silly fetchAndShaCheck shasum 1d132d1e33c8687bae54313792626e7878bd5f57
+43 verbose addTmpTarball /tmp/npm-3400-88d7b1e6/registry.npmjs.org/n/-/n-2.0.2.tgz not in flight; adding
+44 verbose addTmpTarball already have metadata; skipping unpack for n@2.0.2
+45 silly cache afterAdd n@2.0.2
+46 verbose afterAdd /Users/factornine/.npm/n/2.0.2/package/package.json not in flight; writing
+47 verbose afterAdd /Users/factornine/.npm/n/2.0.2/package/package.json written
+48 silly install resolved [ { name: 'n',
+48 silly install resolved     description: 'node version manager',
+48 silly install resolved     version: '2.0.2',
+48 silly install resolved     author: { name: 'TJ Holowaychuk', email: 'tj@vision-media.ca' },
+48 silly install resolved     homepage: 'https://github.com/tj/n',
+48 silly install resolved     bugs: { url: 'https://github.com/tj/n/issues' },
+48 silly install resolved     contributors: [ [Object] ],
+48 silly install resolved     keywords:
+48 silly install resolved      [ 'nvm',
+48 silly install resolved        'node',
+48 silly install resolved        'version',
+48 silly install resolved        'manager',
+48 silly install resolved        'switcher',
+48 silly install resolved        'node',
+48 silly install resolved        'binary',
+48 silly install resolved        'env' ],
+48 silly install resolved     bin: { n: './bin/n' },
+48 silly install resolved     repository: { type: 'git', url: 'git://github.com/tj/n.git' },
+48 silly install resolved     preferGlobal: true,
+48 silly install resolved     os: [ '!win32' ],
+48 silly install resolved     engines: { node: '*' },
+48 silly install resolved     license: 'MIT',
+48 silly install resolved     gitHead: '7831e76a57429afc6341a583febb99469db4d1dc',
+48 silly install resolved     _id: 'n@2.0.2',
+48 silly install resolved     scripts: {},
+48 silly install resolved     _shasum: '1d132d1e33c8687bae54313792626e7878bd5f57',
+48 silly install resolved     _from: 'n@*',
+48 silly install resolved     _npmVersion: '2.13.4',
+48 silly install resolved     _nodeVersion: '0.12.7',
+48 silly install resolved     _npmUser: { name: 'maxrimue', email: 'max.rittmueller@gmail.com' },
+48 silly install resolved     dist:
+48 silly install resolved      { shasum: '1d132d1e33c8687bae54313792626e7878bd5f57',
+48 silly install resolved        tarball: 'http://registry.npmjs.org/n/-/n-2.0.2.tgz' },
+48 silly install resolved     maintainers:
+48 silly install resolved      [ [Object],
+48 silly install resolved        [Object],
+48 silly install resolved        [Object],
+48 silly install resolved        [Object],
+48 silly install resolved        [Object],
+48 silly install resolved        [Object],
+48 silly install resolved        [Object] ],
+48 silly install resolved     directories: {},
+48 silly install resolved     _resolved: 'https://registry.npmjs.org/n/-/n-2.0.2.tgz' } ]
+49 info install n@2.0.2 into /usr/local/lib
+50 info installOne n@2.0.2
+51 verbose installOne of n to /usr/local/lib not in flight; installing
+52 verbose makeDirectory /Users/factornine/.npm/_locks creation not in flight; initializing
+53 silly makeDirectory /Users/factornine/.npm/_locks uid: 501 gid: 20
+54 verbose lock using /Users/factornine/.npm/_locks/n-a01478239d85533e.lock for /usr/local/lib/node_modules/n
+55 silly install write writing n 2.0.2 to /usr/local/lib/node_modules/n
+56 verbose unbuild lib/node_modules/n
+57 info preuninstall n@1.3.0
+58 info uninstall n@1.3.0
+59 verbose unbuild rmStuff n@1.3.0 from /usr/local/lib/node_modules
+60 silly gentlyRm /usr/local/bin/n is being gently removed
+61 silly gentlyRm verifying /usr/local is an npm working directory
+62 silly gentlyRm containing path /usr/local is under npm's control, in /usr/local
+63 silly gentlyRm deletion target /usr/local/bin/n is under /usr/local
+64 verbose gentlyRm vacuuming from /usr/local/bin/n up to /usr/local
+65 silly vacuum-fs removing /usr/local/bin/n
+66 silly vacuum-fs quitting because other entries in /usr/local/bin
+67 info postuninstall n@1.3.0
+68 silly gentlyRm /usr/local/lib/node_modules/n is being purged from base /usr/local
+69 verbose gentlyRm don't care about contents; nuking /usr/local/lib/node_modules/n
+70 silly vacuum-fs purging /usr/local/lib/node_modules/n
+71 silly vacuum-fs quitting because other entries in /usr/local/lib/node_modules
+72 verbose tar unpack /Users/factornine/.npm/n/2.0.2/package.tgz
+73 verbose tar unpacking to /usr/local/lib/node_modules/n
+74 silly gentlyRm /usr/local/lib/node_modules/n is being purged
+75 verbose gentlyRm don't care about contents; nuking /usr/local/lib/node_modules/n
+76 silly gunzTarPerm modes [ '755', '644' ]
+77 silly gunzTarPerm extractEntry package.json
+78 silly gunzTarPerm extractEntry Makefile
+79 silly gunzTarPerm extractEntry Readme.md
+80 silly gunzTarPerm extractEntry bin/n
+81 verbose write writing to /usr/local/lib/node_modules/n/package.json
+82 info preinstall n@2.0.2
+83 verbose readDependencies loading dependencies from /usr/local/lib/node_modules/n/package.json
+84 verbose readDependencies loading dependencies from /usr/local/lib/node_modules/n/package.json
+85 silly install resolved []
+86 verbose about to build /usr/local/lib/node_modules/n
+87 info build /usr/local/lib/node_modules/n
+88 info linkStuff n@2.0.2
+89 silly linkStuff n@2.0.2 has /usr/local/lib/node_modules as its parent node_modules
+90 silly linkStuff n@2.0.2 is part of a global install
+91 silly linkStuff n@2.0.2 is installed into a global node_modules
+92 silly linkStuff n@2.0.2 is installed into the top-level global node_modules
+93 verbose linkBins n@2.0.2
+94 verbose link bins [ { n: './bin/n' }, '/usr/local/bin', true ]
+95 verbose linkMans n@2.0.2
+96 verbose rebuildBundles n@2.0.2
+97 silly gentlyRm /usr/local/bin/n is being gently removed
+98 silly gentlyRm verifying /usr/local is an npm working directory
+99 silly gentlyRm containing path /usr/local is under npm's control, in /usr/local
+100 silly gentlyRm deletion target /usr/local/bin/n is under /usr/local
+101 verbose gentlyRm vacuuming from /usr/local/bin/n up to /usr/local
+102 info install n@2.0.2
+103 info postinstall n@2.0.2
+104 verbose unlock done using /Users/factornine/.npm/_locks/n-a01478239d85533e.lock for /usr/local/lib/node_modules/n
+105 verbose validateInstall loading /usr/local/lib/package.json for validation
+106 verbose stack Error: The package generator-karma@1.0.0 does not satisfy its siblings' peerDependencies requirements!
+106 verbose stack     at /usr/local/lib/node_modules/npm/lib/install.js:125:32
+106 verbose stack     at /usr/local/lib/node_modules/npm/lib/install.js:268:7
+106 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/read-installed/read-installed.js:142:5
+106 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/read-installed/read-installed.js:263:14
+106 verbose stack     at cb (/usr/local/lib/node_modules/npm/node_modules/slide/lib/async-map.js:47:24)
+106 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/read-installed/read-installed.js:263:14
+106 verbose stack     at cb (/usr/local/lib/node_modules/npm/node_modules/slide/lib/async-map.js:47:24)
+106 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/read-installed/read-installed.js:263:14
+106 verbose stack     at cb (/usr/local/lib/node_modules/npm/node_modules/slide/lib/async-map.js:47:24)
+106 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/read-installed/read-installed.js:263:14
+107 verbose cwd /Users/factornine/localhosts/node-js-getting-started/finance-app
+108 error Darwin 13.4.0
+109 error argv "node" "/usr/local/bin/npm" "install" "-g" "n"
+110 error node v0.12.2
+111 error npm  v2.13.3
+112 error code EPEERINVALID
+113 error peerinvalid The package generator-karma@1.0.0 does not satisfy its siblings' peerDependencies requirements!
+113 error peerinvalid Peer generator-angular@0.11.1 wants generator-karma@>=0.9.0
+113 error peerinvalid Peer generator-angular-php@0.6.2 wants generator-karma@~0.8.3
+113 error peerinvalid Peer generator-angularfire@0.9.1-4 wants generator-karma@>=0.8.2
+114 verbose exit [ 1, true ]

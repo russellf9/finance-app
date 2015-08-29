@@ -1,0 +1,80 @@
+//@import "pallette-functions";
+@import "wheel-pallette";
+
+
+// == Stylesheet just for the apps colors ========
+
+
+// ==  KEY COLORS ========
+
+  //  We could use one primary color an generate all the other colors from it!
+  //  We could use:
+  //
+  //• 1 Primary
+  //• 2 Secondary
+  //• 3 Tertiary
+  //• 4 Complementary
+//
+
+//  == define the 'global' pallette ========
+
+$palette: $wheel-palette;
+
+
+
+// == Key colors ========
+
+$color-primary:  map-get(map-get($palette, primary), base);
+
+$color-secondary: map-get(map-get($palette, secondary), base);
+
+$color-tertiary: map-get(map-get($palette, tertiary), base);
+
+$color-complementary: map-get(map-get($palette, complementary), base);
+
+
+
+//  ==  ALL THE KEY COLORS HAVE BEEN DEFINED, THESE ARE THE MODIFICATIONS... ========
+
+
+// == Grey colors ======== //
+
+
+$color-grey:        map-get(map-get($palette, grey-color), base);
+
+$color-grey-light:  map-get(map-get($palette, grey-color), light);
+
+$color-grey-dark:   map-get(map-get($palette, grey-color), dark);
+
+
+
+// == Light and dark colors ========
+
+// light
+
+$color-primary-light :  map-get(map-get($palette, primary), light);
+
+$color-secondary-light : map-get(map-get($palette, secondary), light);
+
+$color-tertiary-light : map-get(map-get($palette, tertiary), light);
+
+$color-complementary-light : map-get(map-get($palette, complementary), light);
+
+
+
+// dark
+
+$color-primary-dark :  map-get(map-get($palette, primary), dark);
+
+$color-secondary-dark : map-get(map-get($palette, secondary), dark);
+
+$color-tertiary-dark : map-get(map-get($palette, tertiary), dark);
+
+$color-complementary-dark : map-get(map-get($palette, complementary), dark);
+
+
+
+
+
+
+

@@ -6,12 +6,12 @@ angular.module('f9.finance-app', ['ui.router',
                                   'f9.grid.multiplication',
                                   'f9.grid.people',
                                   'f9.grid.random-person',
-                                  'f9.shared.input',
+                                  'f9.grid.input-item',
                                   'f9.shared.filters',
-                                  'f9.shared.ui.image-circle',
+                                  'f9.grid.image-circle',
                                   'f9.shared.random-data',
                                   'f9.shared.ui.image-load',
-                                  'f9.shared.ui.loader'
+                                  'f9.grid.f9-loader'
                                   ])
 
 

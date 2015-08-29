@@ -1,0 +1,131 @@
+@import "pallette-functions";
+@import "pallette";
+
+
+/* Stylesheet just for the apps colors */
+
+/*
+ Initially looking at:
+ • How to programmatically go from one color to another in Sass - http://thesassway.com/advanced/how-to-programtically-go-from-one-color-to-another-in-sass
+
+ and
+
+ • Colors In CSS - http://hugogiraudel.com/2012/11/27/css-colors/
+ */
+
+
+
+.black { /* I’m black! */
+  color: rgb(0, 0, 0);
+  //color: rgb(0%, 0%, 0%);
+}
+
+.white { /* I’m white! */
+  color: rgb(255, 255, 255);
+  //color: rgb(100%, 100%, 100%);
+}
+
+$purple: rgb(128, 0, 128);
+
+$purple-light: rgb(255, 0, 255); // FF00FF
+
+.purple { /* I’m medium purple! */
+  color: rgb(128, 0, 128);
+  //color: rgb(50%, 0%, 50%);
+}
+
+.light-purple { /* I’m fuchsia! */
+  background-color: $purple-light
+}
+
+.dark-purple { /* I’m deep purple! */
+  color: rgb(64, 0, 64);
+  //color: rgb(25%, 0%, 25%);
+}
+
+.red { /* I’m fully transparent red, so kind of invisible */
+  color: rgba(255, 0, 0, 0);
+  //color: rgba(100%, 0%, 0%, 0);
+}
+
+// systems - triad
+// Adjacent - 3 colors // default distance 30°
+
+
+
+
+/* Grey colors */
+$primary-grey : grayscale($primary);
+
+$light-difference: 15%;
+
+$primary-grey-light: lighten($primary-grey, $light-difference);
+
+$primary-grey-dark: darken($primary-grey, $light-difference);
+
+
+/* Complementary color */
+
+$complementary : complement($primary);
+
+
+
+// adjust-hue($color, $degrees)        /* Rotates the hue wheel */
+
+$distance: 60;
+
+// we could use:
+// 1 Primary
+// 2 Secondary
+// 3 Tertiary
+// 4 Complementary
+
+
+$secondary :  adjust-hue($primary, -$distance);
+
+$tertiary :  adjust-hue($primary, $distance);
+
+
+
+// adjust the difference
+
+
+
+@function lightenByDegrees($color) {
+  @return lighten($color, $light-difference);
+}
+
+@function darkenByDegrees($color) {
+  @return darken($color, $light-difference);
+}
+
+// GREY
+
+$complementary-grey : grayscale($complementary);
+
+// lighten the key colors
+
+$primary-light : lightenByDegrees($primary);
+
+$secondary-light : lightenByDegrees($secondary);
+
+
+$tertiary-light : lightenByDegrees($tertiary);
+
+
+$complementary-light : lightenByDegrees($complementary);
+
+
+
+
+// darken the key colors
+
+$primary-dark : darkenByDegrees($primary);
+
+$secondary-dark : darkenByDegrees($secondary);
+
+$tertiary-dark : darkenByDegrees($tertiary);
+
+$complementary-dark : darkenByDegrees($complementary);
+
+

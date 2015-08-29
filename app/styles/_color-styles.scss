@@ -1,0 +1,81 @@
+@import "colors";
+//@import "pallette";
+//@import "pallette-functions";
+
+/*
+  Used to define color styles
+*/
+
+
+// == KEY COLORS ========
+
+.color-primary {
+  background-color: $color-primary;
+}
+
+.color-complementary  {
+  background-color: $color-complementary;
+}
+
+.color-secondary {
+  background-color: $color-secondary;
+}
+
+.color-tertiary {
+  background-color: $color-tertiary;
+}
+
+
+// == GREY COLORS ========
+
+.color-grey {
+  background-color: $color-grey;
+}
+
+.color-grey-light {
+  background-color: $color-grey-light;
+}
+
+.color-grey-dark {
+  background-color: $color-grey-dark;
+}
+
+
+
+
+
+// == LIGHT COLORS ========
+
+.color-primary-light {
+  background-color: $color-primary-light;
+}
+
+.color-complementary-light {
+  background-color: $color-complementary-light;
+}
+
+.color-secondary-light {
+  background-color: $color-secondary-light
+}
+
+.color-tertiary-light {
+  background-color: $color-tertiary-light;
+}
+
+// == DARK COLORS ========
+
+.color-primary-dark {
+  background-color: $color-primary-dark;
+}
+
+.color-secondary-dark {
+  background-color: $color-secondary-dark;
+}
+
+.color-tertiary-dark {
+  background-color: $color-tertiary-dark;
+}
+
+.color-complementary-dark {
+  background-color: $color-complementary-dark;
+}

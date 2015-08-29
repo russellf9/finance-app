@@ -4,16 +4,19 @@ var del = require('del');
 var es = require('event-stream');
 var bowerFiles = require('main-bower-files');
 var print = require('gulp-print');
+var ngAnnotate = require('gulp-ng-annotate');
 var Q = require('q');
+
+var gutil = require('gulp-util');
 
 // == PATH STRINGS ========
 
 var paths = {
-    scripts: 'app/**/*.js',
+    scripts: ['./app/**/app.js','./app/**/*.js'],
     styles: ['./app/**/*.css', './app/**/*.scss'],
     images: './images/**/*',
     index: './app/index.html',
-    partials: ['app/**/*.html', '!app/index.html'],
+    partials: ['app/**/*.html', '!app/index.html','!./app/test.html' ],
     distDev: './dist.dev',
     distProd: './dist.prod',
     distScriptsProd: './dist.prod/scripts',
@@ -56,8 +59,9 @@ pipes.builtAppScriptsProd = function() {
     return es.merge(scriptedPartials, validatedAppScripts)
         .pipe(pipes.orderedAppScripts())
         .pipe(plugins.sourcemaps.init())
-            .pipe(plugins.concat('app.min.js'))
-            .pipe(plugins.uglify())
+         //.pipe(plugins.concat('app.min.js'))
+         .pipe(ngAnnotate())
+            //.pipe(plugins.uglify())
         .pipe(plugins.sourcemaps.write())
         .pipe(gulp.dest(paths.distScriptsProd));
 };
@@ -70,8 +74,8 @@ pipes.builtVendorScriptsDev = function() {
 pipes.builtVendorScriptsProd = function() {
     return gulp.src(bowerFiles())
         .pipe(pipes.orderedVendorScripts())
-        .pipe(plugins.concat('vendor.min.js'))
-        .pipe(plugins.uglify())
+        //.pipe(plugins.concat('vendor.min.js'))
+        //.pipe(plugins.uglify())
         .pipe(gulp.dest(paths.distScriptsProd));
 };
 
@@ -93,11 +97,55 @@ pipes.builtPartialsDev = function() {
 };
 
 pipes.scriptedPartials = function() {
+
+    gutil.log('doing scripted partials!');
+
+
     return pipes.validatedPartials()
         .pipe(plugins.htmlhint.failReporter())
         .pipe(plugins.htmlmin({collapseWhitespace: true, removeComments: true}))
         .pipe(plugins.ngHtml2js({
-            moduleName: "healthyGulpAngularApp"
+          // need to make function..
+            moduleName: function(file) {
+
+                //console.log('gulp::scriptedPartials | file: ', file);
+
+                // eg: components/random-person/random-person.template.html
+                // will need: f9.grid.random-person
+
+                var pathParts = file.path.split('/');
+
+               // console.log('gulp::scriptedPartials | pathParts: ', pathParts);
+
+                var folder = pathParts[pathParts.length - 2];
+
+                console.log('gulp::scriptedPartials | folder: ',folder)
+
+
+
+                /**
+                 *
+                 demoComponent
+                 multiplication
+                 multiplication
+                 navigation -> f9.grid.navigation
+                 people -> f9.grid.people
+                 random-person -> f9.grid.random-person
+                 simple-example -> f9.grid.simple-example
+                 item ->
+                 f9-loader
+                 image-circle -> f9.shared.ui.image-circle
+
+                 */
+
+                return 'f9.grid.'+folder;
+
+
+                //
+                //return folder.replace(/-[a-z]/g, function (match) {
+                //    return match.substr(1).toUpperCase();
+                //});
+            }
         }));
 };
 
@@ -171,7 +219,10 @@ pipes.builtAppDev = function() {
 };
 
 pipes.builtAppProd = function() {
-    return es.merge(pipes.builtIndexProd(), pipes.processedImagesProd());
+    gutil.log('builtAppProd!');
+
+    console.log('builtAppProd!')
+    return es.merge(pipes.builtIndexProd(), pipes.processedImagesProd(), pipes.scriptedPartials());
 };
 
 // == TASKS ========
@@ -204,7 +255,9 @@ gulp.task('validate-index', pipes.validatedIndex);
 gulp.task('build-partials-dev', pipes.builtPartialsDev);
 
 // converts partials to javascript using html2js
-gulp.task('convert-partials-to-js', pipes.scriptedPartials);
+gulp.task('convert-partials-to-js', function() {
+    pipes.scriptedPartials
+});
 
 // runs jshint on the dev server scripts
 gulp.task('validate-devserver-scripts', pipes.validatedDevServerScripts);
@@ -312,7 +365,7 @@ gulp.task('watch-prod', ['clean-build-app-prod', 'validate-devserver-scripts'], 
             .pipe(plugins.livereload());
     });
 
-    // watch hhtml partials
+    // watch html partials
     gulp.watch(paths.partials, function() {
         return pipes.builtAppScriptsProd()
             .pipe(plugins.livereload());

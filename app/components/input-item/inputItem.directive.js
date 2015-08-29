@@ -5,7 +5,7 @@
  * Created by factornine on 24/06/2015.
  */
 
-angular.module('f9.shared.input', [])
+angular.module('f9.grid.input-item', [])
 	.directive('inputItem', InputItem);
 
 function InputItem() {
@@ -13,7 +13,7 @@ function InputItem() {
 	return {
 		restrict: 'EA',
 		transclude: true,
-		templateUrl: 'components/input/item/input-item.template.html',
+		templateUrl: 'components/input-item/input-item.template.html',
 		bindToController: true,
 		scope: {
 			model: '=',

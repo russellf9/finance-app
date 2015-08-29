@@ -1,6 +1,14 @@
-@import "settings";
+@import "colors";
+@import "color-styles";
+
+
 @import "../../bower_components/foundation/scss/foundation";
 @import "../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap";
+
+//@import "style";
+
+
+// error see; http://iswwwup.com/t/f7b6a9ab8952/why-does-gulp-js-throw-a-bus-error-10-with-gulp-watch.html
 
 html {
   color: #222;
@@ -105,7 +113,6 @@ $person-container-space: 10px;
 
 // aligns both horizontally and vertically
 .flex-container {
-  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center
@@ -124,4 +131,36 @@ $people-container-space: 10px;
   width: $people-display-width + $person-container-space * 2;
   padding: $person-container-space;
   min-height: 612px;
+}
+
+$square-dimension: 175px;
+$margin: 5px;
+.square {
+  @extend .flex-container;
+  border: solid 1px $grey;
+  display: block;
+  width: $square-dimension;
+  height: $square-dimension;
+  margin-left: $margin;
+  margin-right: $margin;
+  text-align: center;
+
+  p {
+    display: inline-block;
+    //border: solid 1px lightblue;
+    vertical-align: middle;
+  }
+}
+
+.square-title {
+  p {
+    display: inline-block;
+    line-height: $square-dimension;
+    text-transform: uppercase;
+    font-weight: bold;
+    vertical-align: middle;
+  }
+}
+.p--highlight {
+  color: white;
 }
