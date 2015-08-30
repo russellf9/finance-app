@@ -1,5 +1,8 @@
-//@import "pallette-functions";
-@import "wheel-pallette";
+
+//@import "wheel-pallette";
+
+@import "giant-goldfish-palette";
+@import "our-little-project";
 
 
 // == Stylesheet just for the apps colors ========
@@ -16,9 +19,12 @@
   //• 4 Complementary
 //
 
-//  == define the 'global' pallette ========
+//  == define the 'global' palette ========
 
-$palette: $wheel-palette;
+// We can simply change the palette here
+
+//$palette: $giant-goldfish-palette;
+$palette: $our-little-project-palette;
 
 
 

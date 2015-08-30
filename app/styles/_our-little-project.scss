@@ -1,0 +1,42 @@
+$pickled-bluewood : #334359;
+$cerulean: #0698DD;
+$persian-green: #00B1A7;
+$bizarre : #ECE1D6;
+$persimmon : #FC6553;
+
+$primary: $cerulean;
+$secondary: $persian-green;
+$tertiary: $pickled-bluewood;
+$complementary: $persimmon;
+
+
+$light-difference: 15%;
+
+
+$our-little-project-palette: (
+        'primary'       : (
+                base:   $primary,
+                light:  lighten($primary, $light-difference),
+                dark:   darken($primary, $light-difference)
+        ),
+        'complementary' : (
+                base:   $complementary,
+                light:  lighten($complementary, $light-difference),
+                dark:   darken($complementary, $light-difference)
+        ),
+        'secondary'   : (
+                base:   $secondary,
+                light:  lighten($secondary, $light-difference),
+                dark:   darken($secondary, $light-difference)
+        ),
+        'tertiary'    : (
+                base:   $tertiary,
+                light:  lighten($tertiary, $light-difference),
+                dark:   darken($tertiary, $light-difference)
+        ),
+        'grey-color'        : (
+                base:   grayscale($primary),
+                light:  lighten(grayscale($primary), $light-difference),
+                dark:   darken(grayscale($primary), $light-difference)
+        )
+);

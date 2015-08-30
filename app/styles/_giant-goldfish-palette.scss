@@ -1,0 +1,49 @@
+// 209	37	50
+
+// example from http://www.dtelepathy.com/blog/inspiration/beautiful-color-palettes-for-your-next-web-project
+//
+$picton-blue : #2ED6EC;
+$morning-glory: #98DFDE;
+$kidnapper : #DEE7CC;
+$flush-orange:  #FF7F00;
+$international-orange: #FF5900;
+
+
+$primary: $picton-blue;
+
+$secondary: $flush-orange;
+
+$tertiary: $morning-glory;
+
+$complementary: $international-orange; // the actual complementary color will be slightly redder
+
+$light-difference: 15%;
+
+
+$giant-goldfish-palette: (
+        'primary'       : (
+                base:   $primary,
+                light:  lighten($primary, $light-difference),
+                dark:   darken($primary, $light-difference)
+        ),
+        'complementary' : (
+                base:   $complementary,
+                light:  lighten($complementary, $light-difference),
+                dark:   darken($complementary, $light-difference)
+        ),
+        'secondary'   : (
+                base:   $secondary,
+                light:  lighten($secondary, $light-difference),
+                dark:   darken($secondary, $light-difference)
+        ),
+        'tertiary'    : (
+                base:   $tertiary,
+                light:  lighten($tertiary, $light-difference),
+                dark:   darken($tertiary, $light-difference)
+        ),
+        'grey-color'        : (
+                base:   grayscale($primary),
+                light:  lighten(grayscale($primary), $light-difference),
+                dark:   darken(grayscale($primary), $light-difference)
+        )
+);
