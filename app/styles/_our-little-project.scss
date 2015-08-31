@@ -1,14 +1,15 @@
-$pickled-bluewood : #334359;
-$cerulean: #0698DD;
-$persian-green: #00B1A7;
-$bizarre : #ECE1D6;
-$persimmon : #FC6553;
+// example from http://www.dtelepathy.com/blog/inspiration/beautiful-color-palettes-for-your-next-web-project
+
+
+
+@import "colors";
+
 
 $primary: $cerulean;
 $secondary: $persian-green;
 $tertiary: $pickled-bluewood;
 $complementary: $persimmon;
-
+$background: $bizarre;
 
 $light-difference: 15%;
 
@@ -38,5 +39,10 @@ $our-little-project-palette: (
                 base:   grayscale($primary),
                 light:  lighten(grayscale($primary), $light-difference),
                 dark:   darken(grayscale($primary), $light-difference)
-        )
+        ),
+        'background-color'    : (
+                base:   $background,
+                light:  lighten($background, $light-difference),
+                dark:   darken($background, $light-difference)
+        ),
 );
