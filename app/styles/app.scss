@@ -5,27 +5,20 @@
 @import "../../bower_components/foundation/scss/foundation";
 @import "../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap";
 
-//@import "style";
+// app styles last in the cascade?
+@import "style";
+
 
 
 // error see; http://iswwwup.com/t/f7b6a9ab8952/why-does-gulp-js-throw-a-bus-error-10-with-gulp-watch.html
 
-html {
-  color: #222;
-  font-size: 1em;
-  line-height: 1.4;
-}
 
-body {
-  padding: 20px;
-
-}
 
 $grey: #ccc;
 $red : #BB2211;
 
 .active, {
-  color: $red;
+  color: $complementary;
 }
 
 .header {
@@ -40,15 +33,9 @@ $red : #BB2211;
   padding-bottom: 19px;
 }
 
-/* selected link */
-a:active {
-  color: $red;
-}
 
-ul li {
-  list-style: none;
-  display: inline;
-}
+// ==========
+
 
 // for the multiplication table
 .multiplication-table > div {
@@ -118,9 +105,7 @@ $person-container-space: 10px;
   justify-content: center
 }
 
-.f9-icon {
-  color: $grey;
-}
+
 
 $people-container-space: 10px;
 

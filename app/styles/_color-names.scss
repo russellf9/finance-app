@@ -1,6 +1,7 @@
 @import "wheel-palette";
 @import "giant-goldfish-palette";
 @import "our-little-project";
+@imoort "color-whites";
 
 
 // == Stylesheet just for the apps colors ========
@@ -56,6 +57,12 @@ $color-primary-dark :       map-get(map-get($palette, primary), dark);
 $color-secondary-dark :     map-get(map-get($palette, secondary), dark);
 $color-tertiary-dark :      map-get(map-get($palette, tertiary), dark);
 $color-complementary-dark : map-get(map-get($palette, complementary), dark);
+
+
+// == Define text colors and whites etc. ========
+
+$color-text: $shark;
+$color-white: $snow-drift;
 
 
 

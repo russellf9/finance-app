@@ -151,7 +151,9 @@ pipes.scriptedPartials = function() {
 
 pipes.builtStylesDev = function() {
     return gulp.src(paths.styles)
+        //.pipe(plugins.sourcemaps.init())
         .pipe(plugins.sass())
+        //.pipe(plugins.sourcemaps.write())
         .pipe(gulp.dest(paths.distDev));
 };
 

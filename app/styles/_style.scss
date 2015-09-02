@@ -1,0 +1,68 @@
+@import "color-names";
+@import "color-blacks";
+
+@import "../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/mixins/buttons";
+
+
+html {
+  color: $shark;
+  font-size: 1em;
+  line-height: 1.4;
+}
+
+// TODO - ADD A NORMALISER?
+body {
+  padding: 20px;
+
+}
+
+// ==  NAVIGATION ========
+
+// see: http://seesparkbox.com/foundry/how_to_use_ampersands_to_simplifiy_your_sass
+
+a {
+  color: $color-primary;
+
+  &:hover {
+    color: $color-primary-dark;
+    background-color: $color-grey-light;
+  }
+
+  &:active {
+    color: $color-complementary;
+  }
+
+  &:focus {
+    background-color: $color-grey-light;
+  }
+}
+
+
+ul li {
+  list-style: none;
+  display: inline;
+}
+
+.text-muted {
+  color: $color-grey;
+ }
+
+// ==  ICONS ========
+
+// Style for icons
+.f9-icon {
+  color: $color-primary;
+}
+
+// ==  BOOTSTRAP BUTTONS ========
+
+// Override bootstrap buttons
+// $color, $background, $border
+.btn-success {
+  @include button-variant($color-white, $color-primary, $color-primary-dark);
+}
+
+.btn-navigation {
+  @include button-variant($color-text, $color-primary-light, $color-primary-dark);
+}
+
